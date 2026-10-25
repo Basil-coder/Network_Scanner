@@ -78,7 +78,7 @@ The workflow never auto-merges. A maintainer must review every proposal. It also
 In this repository on GitHub:
 
 1. Open **Settings → Secrets and variables → Actions → New repository secret**. Create `OPENAI_API_KEY` with an OpenAI API key that has an appropriate project budget and rotation policy.
-2. Open **Settings → Actions → General → Workflow permissions**. Select **Read and write permissions**, enable **Allow GitHub Actions to create and approve pull requests**, and save. The workflow still narrows each job to only the permissions it needs and never approves a PR.
+2. Open **Settings → Actions → General → Workflow permissions**. Keep the restrictive **Read repository contents and packages permissions** default, enable **Allow GitHub Actions to create and approve pull requests**, and save. The workflow explicitly grants write access only to its implementation job and never approves a PR. If an organization policy prevents that job-level grant, an organization owner must allow it first.
 3. If Actions are restricted under **Settings → Actions → General → Actions permissions**, allow GitHub-authored actions plus `openai/codex-action`. The workflow pins every action to a reviewed commit SHA.
 4. Keep branch protection/rulesets on `main` configured to require a pull request and any desired human approvals. Do not configure a separate bot or ruleset to auto-merge these PRs. Disabling **Settings → General → Pull Requests → Allow auto-merge** provides a repository-wide additional safeguard if auto-merge is not otherwise needed.
 
