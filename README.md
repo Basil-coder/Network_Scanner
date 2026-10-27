@@ -44,6 +44,13 @@ Use `python network_scanner.py --help` to see all options. IPv4 CIDR input is
 required; malformed input, IPv6 networks, missing prefixes, and targets larger
 than `/16` are rejected before any scan starts.
 
+## Offline inventory drift reporting
+
+Use `--format json` to export a versioned scan result and compare two saved
+snapshots locally using `inventory_diff.py`. The comparison never scans or
+contacts a network. See [INVENTORY.md](INVENTORY.md) for a fully synthetic
+example, input validation, exit codes and privacy considerations.
+
 ## Tests
 
 The automated tests use dependency injection and mocked Scapy objects. They do
