@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import argparse
 import ipaddress
+import json
 import sys
 from collections.abc import Callable, Sequence
 from typing import TypedDict
@@ -84,6 +85,12 @@ def build_parser() -> argparse.ArgumentParser:
         action="store_true",
         help="validate and display the target without sending packets",
     )
+    parser.add_argument(
+        "--format",
+        choices=("text", "json"),
+        default="text",
+        help="print text (default) or versioned JSON inventory to stdout",
+    )
     return parser
 
 
@@ -94,10 +101,13 @@ def main(
 ) -> int:
     """Run the CLI and return its process exit code."""
 
-    args = build_parser().parse_args(argv)
+    parser = build_parser()
+    args = parser.parse_args(argv)
     subnet: ipaddress.IPv4Network = args.subnet
 
     if args.dry_run:
+        if args.format == "json":
+            parser.error("--format json cannot be combined with --dry-run")
         print(
             f"Dry run: would scan {subnet.with_prefixlen} "
             f"({subnet.num_addresses:,} addresses); no packets sent."
@@ -109,6 +119,14 @@ def main(
     except (ImportError, OSError) as exc:
         print(f"Scan failed: {exc}", file=sys.stderr)
         return 1
+
+    if args.format == "json":
+        print(json.dumps({
+            "schema_version": 1,
+            "subnet": subnet.with_prefixlen,
+            "devices": devices,
+        }, indent=2, sort_keys=True))
+        return 0
 
     print(f"Available devices in {subnet.with_prefixlen}:")
     if not devices:
