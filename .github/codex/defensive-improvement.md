@@ -22,3 +22,14 @@ Hard requirements:
 - Do not merely reformat, rename, or update documentation. The run must contain one substantive defensive improvement plus its directly related tests and minimal documentation if useful.
 
 Before finishing, run only local/offline checks that cannot initiate network activity. In your final message, state the single improvement made, the tests added or changed, and any limitation a human reviewer should examine. If a safe meaningful improvement is not possible, make no changes and explain why; the workflow will fail closed and create no pull request.
+
+## Future video-inspired backlog (review issue #7)
+
+The owner has queued four larger demonstrations in this order **after** the current safe network inventory / Python defensive improvements. Track their scope and readiness in https://github.com/Basil-coder/Network_Scanner/issues/7:
+
+1. Threat-model case study: accurate Mermaid architecture and data-flow diagrams, trust boundaries, STRIDE threats, selected MITRE ATT&CK references, and mitigations, backed by testable validation or code where possible.
+2. Vulnerability identification + verified remediation in a **deliberately vulnerable local, synthetic lab app** with tests proving the fix. Never assess unapproved targets.
+3. Small DevSecOps CI/CD demo with safe simulated failing security gate (prefer separate repo/workflow, PHP only if proper runtime and review are provisioned).
+4. A secure end-to-end sample app with authentication and access control, documented SDLC security and Mermaid diagrams (separate repo, incremental human-reviewed milestones).
+
+**Do not override any hard requirements above.** This existing repository-specific automation may select only one small, substantive, permitted Python improvement in its current environment. For tracks 3–4 and anything requiring a new dependency, network access, separate repository, deployment, or modifications to workflow policy, do not attempt it automatically: leave a specific scope/implementation recommendation for a human-approved follow-up rather than modifying or weakening guardrails. Do not claim that the future backlog is implemented or that this workflow is live until the workflow PR has been merged into the default branch.
