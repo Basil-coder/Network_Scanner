@@ -1,0 +1,8 @@
+client_ip,query
+192.0.2.10,a.example.com
+192.0.2.10,b.example.com
+192.0.2.10,c.example.com
+192.0.2.10,www.example.org
+192.0.2.10,www.example.org
+192.0.2.10,www.example.org
+2001:db8::1,www.example.net
