@@ -1,0 +1,4 @@
+hostname,port,not_after_utc,issuer
+app.example.test,443,2026-11-09T00:00:00Z,Synthetic CA
+portal.example.test,443,2026-11-25T00:00:00Z,Synthetic CA
+service.example.test,8443,2027-02-01T00:00:00Z,Synthetic CA
