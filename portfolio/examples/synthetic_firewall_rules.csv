@@ -1,0 +1,5 @@
+rule_id,enabled,action,direction,protocol,source,destination,port
+lab-ssh,true,allow,inbound,tcp,any,192.0.2.10,22
+lab-internal,true,allow,inbound,tcp,198.51.100.0/24,192.0.2.10,443
+lab-deny,true,deny,inbound,any,any,any,any
+lab-wide,true,allow,inbound,any,any,any,any
