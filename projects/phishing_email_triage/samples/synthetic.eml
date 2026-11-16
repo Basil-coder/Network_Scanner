@@ -1,0 +1,8 @@
+From: "Training" <sender@example.test>
+To: "Analyst" <analyst@example.test>
+Subject: Synthetic phishing triage sample
+Authentication-Results: mx.example.test; spf=fail; dkim=none; dmarc=fail
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+This is synthetic training data. Visit https://example.test/training?token=synthetic
