@@ -1,0 +1,6 @@
+{
+  "min_length": 12,
+  "max_length": 64,
+  "require_classes": ["lower", "upper", "digit"],
+  "blocklist": ["KnownBadPassword123"]
+}
