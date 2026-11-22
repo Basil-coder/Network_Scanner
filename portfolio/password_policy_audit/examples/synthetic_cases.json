@@ -1,0 +1,6 @@
+[
+  {"id": "fixture_01", "password": "ExamplePassphrase2026"},
+  {"id": "fixture_02", "password": "Ab3"},
+  {"id": "fixture_03", "password": "KnownBadPassword123"},
+  {"id": "fixture_04", "password": "NoDigitsHerePlease"}
+]
