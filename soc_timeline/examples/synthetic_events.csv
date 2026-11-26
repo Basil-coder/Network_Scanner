@@ -1,0 +1,7 @@
+event_id,timestamp,source,event_type,ip,asset
+A01,2026-11-18T10:00:00Z,auth,login_failure,192.0.2.8,lab-host
+A02,2026-11-18T10:01:00Z,auth,login_failure,192.0.2.8,lab-host
+F01,2026-11-18T10:02:00Z,firewall,blocked_connection,198.51.100.7,lab-host
+A03,2026-11-18T10:03:00Z,auth,login_failure,192.0.2.8,lab-host
+A04,2026-11-18T10:04:00Z,auth,login_success,192.0.2.8,lab-host
+I01,2026-11-18T10:05:00Z,integrity,file_changed,,lab-host
