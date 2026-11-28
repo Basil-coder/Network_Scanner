@@ -1,0 +1,4 @@
+ticket_id,opened_at,priority,status,updated_at
+DEMO-001,2026-11-14T06:00:00Z,P1,open,2026-11-14T07:00:00Z
+DEMO-002,2026-11-14T08:30:00Z,P1,in_progress,2026-11-14T09:00:00Z
+DEMO-003,2026-11-14T09:00:00Z,P3,resolved,2026-11-14T11:00:00Z
